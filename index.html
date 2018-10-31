@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html class="desktop flash svg canvas canvastext cssgradients generatedcontent supports csscolumns csscolumns-width no-csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth no-csscolumns-breakbefore no-csscolumns-breakafter no-csscolumns-breakinside flexbox no-cssreflections csstransforms csstransforms3d csstransitions no-touchevents" style=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta name="description" content="Web reporting made easy with myDBR. myDBR is an advanced web reporting tool for MySQL, MS SQL Server and Sybase databases">
+<meta name="version" content="5.2.2/3695">
+<link rel="shortcut icon" href="http://34.197.159.58/mydbr/images/mydbr_fav.ico?v=3695" type="image/ico">
+<title>תעריפים - Cloud4U - your data , your cloud</title>
+<script>mydbr_sorting = {
+separator: {thousand:",", decimal: "."},
+dateformat: "Y-m-d h:i:s a",
+sum_prefix: "",
+min_prefix: "min",
+max_prefix: "max",
+count_prefix: "#",
+avg_prefix: "avg",
+lang: ""
+}</script>
+<script>jquery_date = "yy-mm-dd";jquery_time = "hh:mm:ss tt";</script>
+<link href="assets/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="assets/assets.css" rel="stylesheet" type="text/css">
+<link href="assets/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="assets/select2.css" rel="stylesheet" type="text/css">
+<link href="assets/style.css" rel="stylesheet" type="text/css">
+<link href="assets/normal.css" rel="stylesheet" type="text/css">
+<link href="assets/default.css" rel="stylesheet" type="text/css">
+<link href="assets/macmoz.css" rel="stylesheet" type="text/css">
+<link href="assets/userstyle.css" rel="stylesheet" type="text/css">
+<script src="assets/modernizr.js"></script>
+<script src="assets/jquery.js"></script>
+<script src="assets/jquery-ui.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/assets.js"></script>
+<script src="assets/assets_002.js"></script>
+<!--Start Extra Assets Javascript & Styles -->
+
+<link href="assets/jquery.custom-scrollbar.css" rel="stylesheet" type="text/css">
+<script src="assets/jquery.custom-scrollbar.js"></script>
+
+<style type="text/css">
+.content {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.search_arrow.tool.arrow_right {
+	display: none;
+}
+
+#tab_dbr_rt1{
+	display: block;
+}
+
+
+.hovermenu_icon.export.oem_export_menu, 
+.hovermenu_icon.export {
+	display: none;
+}
+
+#tab_dbr_rt1 .findit {
+	display: block;
+	width: 100%;
+
+}
+
+
+.title {
+	display: none;
+}
+
+div.box_fixed {
+	display:none;
+}
+
+#tab_dbr_rt1 .findit {
+	display: block;
+	margin: 15px 20px 0;
+	border: 1px solid #fff;
+	line-height: 30px;
+	border-radius: 30px;
+	padding: 5px 20px;
+	max-width: calc(100% - 40px);
+}
+
+body {
+	background-color: #EFF0F5;
+    margin: 0 20px;
+}
+
+.tableFloatingHeaderOriginal, .tableFloatingHeaderOriginal .row_header {
+	background-color: transparent;
+}
+
+.tableFloatingHeaderOriginal .row_header th {
+	background-color: #9992C8;
+	border-top: none;
+	border-bottom: none;
+	color: #fff;
+	vertical-align: middle;
+}
+
+.tableFloatingHeaderOriginal .row_header th:first-child {
+	border-top-left-radius: 10px;
+}
+
+.scroll-bar.horizontal {
+	display: block;
+	background-color: #E1E0E5;
+	height: 17px;
+	z-index: 99999999;
+	position: fixed !important;
+	bottom: 8px;
+	left: 50px;
+	border-radius: 40px;
+	border: 3px solid #E1E0E5;;
+	overflow: hidden;
+}
+
+.scroll-bar.horizontal .thumb {
+	height: 20px;
+	background-color: #9992C7;
+	border-radius: 40px;
+
+}
+
+.bt-scroller {
+	position:fixed;
+	bottom: 0;
+	background-color: #fff;
+	width: calc(100% - 40px);
+	left: 10;
+	height: 40px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	z-index: 20;
+}
+
+#rightScroller {
+	float: right;
+	margin-top: 12px;
+	padding-right: 5px;
+	cursor: pointer;
+	display: block;
+}
+
+#leftScroller {
+	float: left;
+	margin-top: 12px;
+	padding-left: 5px;
+	cursor: pointer;
+	display: block;
+}
+
+.scrollable .viewport {
+	overflow: visible;
+}
+
+#topScroller {
+    top: -14px;
+    position: absolute;
+	cursor: pointer;
+}
+</style>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		function refreshSize() {
+
+			$("body").append('<div class="bt-scroller"><span id="rightScroller">&#x25B6;</span><span id="leftScroller">&#x25C0;</span><center><span id="topScroller">&#x25BC;</span></center></div><div id="custom_css"></div>');
+			
+			screenWidth = $(window).width();
+			screenHeight = $(window).height();
+			if(screenWidth-40 > $("#dbr_rt1").width()) {
+				$(".scroll-bar.horizontal, .bt-scroller").hide();
+			}
+
+			$(".max_height, .content").height(screenHeight-60 + "px");
+			$("body").find('#custom_css').append("<style>.scroll-bar.horizontal { max-width: " + (screenWidth-100) + "px; </style>");
+
+			$("#tab_dbr_rt1").width(screenWidth-40 + "px");
+		}
+
+		$(window).resize(refreshSize);
+
+		refreshSize();
+
+		$(".divTableWithFloatingHeader .divTableWithFloatingHeader").customScrollbar({
+			updateOnWindowResize: true,
+			vScroll: true,
+			hScroll: true
+		 });
+
+		$("body").on('click', '#rightScroller', function(event) {
+			
+			$(".divTableWithFloatingHeader .divTableWithFloatingHeader").customScrollbar("scrollByX", 200);
+		});
+
+		$("body").on('click', '#leftScroller', function(event) {
+			$(".divTableWithFloatingHeader .divTableWithFloatingHeader").customScrollbar("scrollByX", -200);
+		});
+		
+		$("body").on('click', '#topScroller', function(event) {
+			$(".divTableWithFloatingHeader .divTableWithFloatingHeader").customScrollbar("scrollByY", 200);
+		});
+
+	});
+</script>
+
+<!-- END Extra Assets Javascript & Styles -->
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+<body class="report">
+<ul class="hovermenu_icon export oem_export_menu"><li><ul class="hovermenu exportmenu right" style="display: none;"><li class="excel"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;export=xlsx">Excel</a></li><li class="pdf"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;export=pdf">PDF</a></li><li class="csv lastchild"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;export=csv">CSV</a></li></ul></li></ul><div class="content report_64">
+<table class="mydbr_popupframe ui-draggable"><tbody><tr><th class="border ui-draggable-handle"><a class="close white ui-icon ui-icon-closethick" href="javascript:void(0)"></a><a class="refresh ui-icon white ui-icon-arrowrefresh-1-n" href="javascript:void(0)" style="float: right;"></a><a class="newwin ui-icon white ui-icon-newwin" href="javascript:void(0)"></a><span></span></th></tr><tr><td><div class="popup_content" id="popup"></div></td></tr></tbody></table><input name="m" value="10" type="hidden">
+<input id="db" name="db" value="mysql" type="hidden">
+<div class="title">תעריפים</div><div class="box_fixed"><h1> תעריפים</h1></div><style type="text/css">.desc {max-width:250px;white-space:pre-wrap}</style><div class="divTableWithFloatingHeader"><table id="dbr_rt1" class="rstable sortable stickyheader" style="padding: 0px;">
+<caption>
+<span class="search_arrow tool arrow_right"></span>
+<div id="tab_dbr_rt1" class="search_div search">
+<input class="findit" title="Find rows" name="find_dbr_rt1" onkeyup="search_table(this, 'dbr_rt1'); return false;" placeholder="🔍 Filter" type="search">
+<div class="copytocb" data-id="dbr_rt1" title="Copy to clipboard"></div>
+<ul class="hovermenu_icon export"><li><ul class="hovermenu exportmenu"><li class="excel"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;object=1&amp;export=xlsx">Excel</a></li><li class="pdf"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;rs=1&amp;export=pdf">PDF</a></li><li class="csv lastchild"><a href="http://34.197.159.58/mydbr/report.php?r=64&amp;m=10&amp;h=57cab0634630bda3fd192ce4e55b0e3c8e3c61df&amp;i=1&amp;object=1&amp;export=csv">CSV</a></li></ul></li></ul></div>
+</caption><thead class="tableFloatingHeader" style="position: fixed; top: 0px; display: none; margin-top: 0px; margin-left: 0px; margin-right: 0px; left: 10px; width: 896.667px;"><tr class="row_header"><th class="cell_header align_r header" data-datatype="int" data-decimals="0" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 95.5px;">FatherTariffCode</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 111.317px;">TARIFFNAME</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 86.3167px;">StateName</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 106.783px;">CompanyName</th>
+<th class="cell_header align_r header" data-datatype="date" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 62.6667px;">FROM DATE </th>
+<th class="cell_header align_r header headerSortUp" data-datatype="date" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 56.6667px;">TO DATE </th>
+<th class="cell_header align_r header" data-datatype="float" data-decimals="2" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 110.783px;">PriceForDay_renter</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 52.1833px;">Currency</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 34.5833px;">Fuel Policy</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort." style="width: 32.8667px;">Areas</th>
+</tr>
+</thead><thead class="tableFloatingHeaderOriginal"><tr class="row_header"><th class="cell_header align_r header" data-datatype="int" data-decimals="0" title="Click here to sort.
+Press shift for a multilevel sort.">FatherTariffCode</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">TARIFFNAME</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">StateName</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">CompanyName</th>
+<th class="cell_header align_r header" data-datatype="date" title="Click here to sort.
+Press shift for a multilevel sort.">FROM DATE </th>
+<th class="cell_header align_r header headerSortUp" data-datatype="date" title="Click here to sort.
+Press shift for a multilevel sort.">TO DATE </th>
+<th class="cell_header align_r header" data-datatype="float" data-decimals="2" title="Click here to sort.
+Press shift for a multilevel sort.">PriceForDay_renter</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">Currency</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">Fuel Policy</th>
+<th class="cell_header align_l header" data-datatype="char" title="Click here to sort.
+Press shift for a multilevel sort.">Areas</th>
+</tr>
+</thead>
+<tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2473&amp;m=10&amp;h=ca04ce6d096fa66db88d0a1f190b75e68c06c556&amp;i=1">2473</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2473[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2473&amp;m=10&amp;h=12f160b581c70d592b251d217cb0cfca7709f07d&amp;i=1','18NL.1-3-BR1-07.01',null,null);">18NL.1-3-BR1-07.01</a></td>
+<td class="cell align_l">NETHERLANDS</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2473[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=78&amp;p2=NL.DOLLAR&amp;p3=78&amp;p4=NETHERLANDS&amp;m=10&amp;h=87ff98c4274f13723791b358460cfcef9d1f5767&amp;i=1','NL.DOLLAR',null,null);">NL.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2019-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2473[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2473&amp;m=10&amp;h=59b2297aba08585c63a382ba0496f9f0fa8f5707&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1811&amp;m=10&amp;h=6a6783cf4e3b098ef78d38f82f0d3296c9594546&amp;i=1">1811</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1811[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1811&amp;m=10&amp;h=88085d770dd2b7a42961411083a9e6838c7494cf&amp;i=1','18FR.7-1-BR2-01',null,null);">18FR.7-1-BR2-01</a></td>
+<td class="cell align_l">FRANCE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1811[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=338&amp;p2=FR.ALAMO&amp;p3=37&amp;p4=FRANCE&amp;m=10&amp;h=2a518831c327dd544a9c836c4c70f20658592683&amp;i=1','FR.ALAMO',null,null);">FR.ALAMO</a></td>
+<td class="cell align_r nowrap">2019-05-04</td>
+<td class="cell align_r nowrap">2019-05-04</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1811[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1811&amp;m=10&amp;h=a814d23993d66f6fc65f5b995430b33632fdf5a9&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2477&amp;m=10&amp;h=3ca131e4cde08fe5945e11c93df3af4ac53e6451&amp;i=1">2477</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2477[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2477&amp;m=10&amp;h=08571f3d005fc2638d0b9419dd4672b147f4539b&amp;i=1','18DE.7-3-BR1-11.01',null,null);">18DE.7-3-BR1-11.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2477[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=299&amp;p2=DE.AUTOSHAY7&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=9d6864ae3502f05002bda8379bcf666374a0b0bf&amp;i=1','DE.AUTOSHAY7',null,null);">DE.AUTOSHAY7</a></td>
+<td class="cell align_r nowrap">2018-11-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2477[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2477&amp;m=10&amp;h=3ba90eb9a76d3c2c62b0901fc43b07dc4efffeae&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2476&amp;m=10&amp;h=64211535e81b035c50971717a9aec836e6791692&amp;i=1">2476</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2476[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2476&amp;m=10&amp;h=16b900768a43fb6afc7b59446580d579ff845f8e&amp;i=1','18DE.2-3-BR1-08.16AP',null,null);">18DE.2-3-BR1-08.16AP</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2476[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=274&amp;p2=DE.AUTOSHAY2&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=b4077f43771df565c62cdbdc2dd2ffa736c22a91&amp;i=1','DE.AUTOSHAY2',null,null);">DE.AUTOSHAY2</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2476[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2476&amp;m=10&amp;h=0e8191154acd549e19fe1fffd10d830d3d4a49ed&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2471&amp;m=10&amp;h=e95767a871d4cb10dc8fc996bfc231342ba1f29b&amp;i=1">2471</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2471[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2471&amp;m=10&amp;h=6d997a51f0fe7d8981f44ce8a6e6866173ae20f7&amp;i=1','19USFL.1-9-BR1-01.01',null,null);">19USFL.1-9-BR1-01.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2471[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2019-01-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2471[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2471&amp;m=10&amp;h=0572c3d630678f46c9bd197c5b1e1373e6481a10&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2458&amp;m=10&amp;h=270f9425deb49282eb2291f6ed1280ec5bea216c&amp;i=1">2458</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2458[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2458&amp;m=10&amp;h=690a8cc09261d91624757881a224b2fd87cfa94c&amp;i=1','18IT.1-3-BR1-10.01',null,null);">18IT.1-3-BR1-10.01</a></td>
+<td class="cell align_l">ITALY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2458[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=52&amp;p2=IT.AUTOSHAY1&amp;p3=52&amp;p4=ITALY&amp;m=10&amp;h=868829891fb5aa9bbf2a97192e5c481e1c3479ad&amp;i=1','IT.AUTOSHAY1',null,null);">IT.AUTOSHAY1</a></td>
+<td class="cell align_r nowrap">2018-10-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2458[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2458&amp;m=10&amp;h=6e8df4f58223c2a00f9a06e9f807bd9bf7d6120e&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2444&amp;m=10&amp;h=71d66894dc5dc305fae55346616fb1f326b347db&amp;i=1">2444</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2444[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2444&amp;m=10&amp;h=f64552c91c05199b5cc69ce6f1282f54f34a8174&amp;i=1','19USFO.1-9-BR1-01.01',null,null);">19USFO.1-9-BR1-01.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2444[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2019-01-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2444[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2444&amp;m=10&amp;h=c7b613eb637ae1accefc33f014173eb8cf485bdb&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2427&amp;m=10&amp;h=3671c37b0f9f647a57cf9befd6abfde43992ab55&amp;i=1">2427</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2427[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2427&amp;m=10&amp;h=4d45ba61d25f5848e504ed1d2691f2602c21cd6a&amp;i=1','18IT.5-2-BR1-09.01',null,null);">18IT.5-2-BR1-09.01</a></td>
+<td class="cell align_l">ITALY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2427[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=273&amp;p2=IT.AUTOSHAY5&amp;p3=52&amp;p4=ITALY&amp;m=10&amp;h=8ebbd3185ab512489436cd8070ed85686f604952&amp;i=1','IT.AUTOSHAY5',null,null);">IT.AUTOSHAY5</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit">rrr</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2427[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2427&amp;m=10&amp;h=506fcba50274f3ed138ce9f63aa1787d50a41412&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2408&amp;m=10&amp;h=f9f49c3d4ac95b44c9b2634f51ea7523d035ba85&amp;i=1">2408</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2408[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2408&amp;m=10&amp;h=c70cbe9f96b7113a736f6e3b5b766f8904028f9e&amp;i=1','18NL.2-3-BR1-04.01',null,null);">18NL.2-3-BR1-04.01</a></td>
+<td class="cell align_l">NETHERLANDS</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2408[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=264&amp;p2=NL.HERTZ&amp;p3=78&amp;p4=NETHERLANDS&amp;m=10&amp;h=25f899dc6a497230f615a5a4b65282b8656ea840&amp;i=1','NL.HERTZ',null,null);">NL.HERTZ</a></td>
+<td class="cell align_r nowrap">2018-04-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2408[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2408&amp;m=10&amp;h=61f18dbb8468b715e3e41c7b00c35b2c2965d10b&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2403&amp;m=10&amp;h=464fc99dc4bfd1951a8bd80b1ffcd2730cc698bb&amp;i=1">2403</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2403[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2403&amp;m=10&amp;h=41022f958b721b3fd43355f9b0e8d5f89b0f77db&amp;i=1','18DE.8.3-BR1.09.01',null,null);">18DE.8.3-BR1.09.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2403[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=313&amp;p2=DE.BUDGET&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=329f75b4116f3193153fa6b46bef1329f0ae27f0&amp;i=1','DE.BUDGET',null,null);">DE.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2403[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2403&amp;m=10&amp;h=4469049b9c0888cab2e7b4ce4aec308302f2d86a&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2390&amp;m=10&amp;h=0f208a5cedfcf7b6cae7fe8927f434bab1265d16&amp;i=1">2390</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2390[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2390&amp;m=10&amp;h=80062fdc79f654c4a73701202e9fa7767d3b12ed&amp;i=1','18DE.8.9-BR1.08.20',null,null);">18DE.8.9-BR1.08.20</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2390[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=313&amp;p2=DE.BUDGET&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=329f75b4116f3193153fa6b46bef1329f0ae27f0&amp;i=1','DE.BUDGET',null,null);">DE.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2390[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2390&amp;m=10&amp;h=596cee40672a398b0798bb500e0b670e4d8d0afe&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2386&amp;m=10&amp;h=f53ddd73b5b40a2dba162d94933f834f485d1f8b&amp;i=1">2386</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2386[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2386&amp;m=10&amp;h=e438db0eb0a7acf288db152fdac7fbbc10f7d6ad&amp;i=1','18IT.9-9-BR1-08.22',null,null);">18IT.9-9-BR1-08.22</a></td>
+<td class="cell align_l">ITALY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2386[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=304&amp;p2=IT.AUTOSHAY9&amp;p3=52&amp;p4=ITALY&amp;m=10&amp;h=c9b6b3d7d3a08a431c3a14aaef59db6c0c9105d0&amp;i=1','IT.AUTOSHAY9',null,null);">IT.AUTOSHAY9</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit">rrr</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2386[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2386&amp;m=10&amp;h=8fe6d824e8ea9e01775ffc802f8d9b5f61e9f6cb&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2381&amp;m=10&amp;h=9e7ff372550e6cc68ee4631d6f0cdea1da667d37&amp;i=1">2381</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2381[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2381&amp;m=10&amp;h=50acc7e31ec79ad322515726b7a648ba75b2ec6e&amp;i=1','18IT.4-9-BR1-08.20',null,null);">18IT.4-9-BR1-08.20</a></td>
+<td class="cell align_l">ITALY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2381[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=271&amp;p2=IT.AUTOSHAY4&amp;p3=52&amp;p4=ITALY&amp;m=10&amp;h=accfe4948c44bd6eb261cd02c1bea9765411fd31&amp;i=1','IT.AUTOSHAY4',null,null);">IT.AUTOSHAY4</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2381[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2381&amp;m=10&amp;h=ae01eb05470d3a320de3db4698d26ede6b3a6724&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2361&amp;m=10&amp;h=cea335ae5e651375865941ca8357482fdf3d64b1&amp;i=1">2361</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2361[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2361&amp;m=10&amp;h=ba86b4ae3f13e5c3dab17f11586d3860a099869e&amp;i=1','19FR.2-1-BR1-01.01',null,null);">19FR.2-1-BR1-01.01</a></td>
+<td class="cell align_l">FRANCE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2361[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=272&amp;p2=FR.HERTZ&amp;p3=37&amp;p4=FRANCE&amp;m=10&amp;h=7cdd6f2b9e713f32eda9fdf30e1594e4cb345438&amp;i=1','FR.HERTZ',null,null);">FR.HERTZ</a></td>
+<td class="cell align_r nowrap">2019-01-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2361[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2361&amp;m=10&amp;h=f6bb2adc37b80ba540a1393b5bc531d27ae94584&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2318&amp;m=10&amp;h=d6d93b560f22bd6d9e7bb349b68d1df2ed6d5e44&amp;i=1">2318</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2318[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2318&amp;m=10&amp;h=4dd6935ca96c22314cf99ddf5b9d5a787fa3461b&amp;i=1','17DE.7-9-BR1-11.01',null,null);">17DE.7-9-BR1-11.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2318[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=299&amp;p2=DE.AUTOSHAY7&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=9d6864ae3502f05002bda8379bcf666374a0b0bf&amp;i=1','DE.AUTOSHAY7',null,null);">DE.AUTOSHAY7</a></td>
+<td class="cell align_r nowrap">2018-11-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit">rrr</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2318[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2318&amp;m=10&amp;h=a0ad870a2299ea1fd0a55052536b34f14afde762&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2310&amp;m=10&amp;h=460ba3793d3c572f79ba0caaa6c97627132e4148&amp;i=1">2310</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2310[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2310&amp;m=10&amp;h=27a4a1b15144a4a86ec43d22f227e89e9835a8ae&amp;i=1','19CA.1-2-BR1-01.01',null,null);">19CA.1-2-BR1-01.01</a></td>
+<td class="cell align_l">CANADA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2310[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=19&amp;p2=CA.THRIFTY&amp;p3=19&amp;p4=CANADA&amp;m=10&amp;h=60dea66802273e3acf56f931c8b1b6af7abc7712&amp;i=1','CA.THRIFTY',null,null);">CA.THRIFTY</a></td>
+<td class="cell align_r nowrap">2019-01-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">7.00</td>
+<td class="cell align_l">CAD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2310[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2310&amp;m=10&amp;h=056035636d0edd461a6015251d69dd330c614e88&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2168&amp;m=10&amp;h=3e45a07d57227e2d927ded1f7a462c47855ca9e5&amp;i=1">2168</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2168[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2168&amp;m=10&amp;h=71e84a778418059ae83c31dafa491b12791e0042&amp;i=1','19USCA.1-9-BR1-01.0',null,null);">19USCA.1-9-BR1-01.0</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2168[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2019-01-01</td>
+<td class="cell align_r nowrap">2019-03-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2168[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2168&amp;m=10&amp;h=324e6f91fa0864ea1f0cce1613b445e46674ea1e&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2448&amp;m=10&amp;h=a4b66341a291e057e29fcbf16bf94df839dcf6b7&amp;i=1">2448</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2448[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2448&amp;m=10&amp;h=4280ccd5ff0c1a21070a8f71d9f32958debdb4e5&amp;i=1','18CZ.2-3-BR1-08.26',null,null);">18CZ.2-3-BR1-08.26</a></td>
+<td class="cell align_l">CZECH REPUBLIC</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2448[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=280&amp;p2=CZ.RENTPLUS&amp;p3=27&amp;p4=CZECH%20REPUBLIC&amp;m=10&amp;h=90af955c50802758be0499612ed682251f1020db&amp;i=1','CZ.RENTPLUS',null,null);">CZ.RENTPLUS</a></td>
+<td class="cell align_r nowrap">2018-08-26</td>
+<td class="cell align_r nowrap">2019-01-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2448[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2448&amp;m=10&amp;h=2fc9848f336c7a1858317830233a616095b7ed8d&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2474&amp;m=10&amp;h=75612307f71eac890fa243cf051b693c0a1cafd8&amp;i=1">2474</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2474[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2474&amp;m=10&amp;h=49134dcb65d2536f917230e7a87fabbd7eea3211&amp;i=1','18USFL.1-9-BR1-12.19',null,null);">18USFL.1-9-BR1-12.19</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2474[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-12-19</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2474[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2474&amp;m=10&amp;h=07db7362e28928a04180b92c436fcd8c1f90c314&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2456&amp;m=10&amp;h=1c4bb994176e45bf23bb8403d78e4d4495b890f3&amp;i=1">2456</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2456[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2456&amp;m=10&amp;h=5d2674c782eee11129de4767b9da3b6dfa5381de&amp;i=1','18AT.1-10BR1-01.10',null,null);">18AT.1-10BR1-01.10</a></td>
+<td class="cell align_l">AUSTRIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2456[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=393&amp;p2=AT.ALAMO&amp;p3=8&amp;p4=AUSTRIA&amp;m=10&amp;h=ce8bab6eeeafb8edfa0eab0fece2595383bf993e&amp;i=1','AT.ALAMO',null,null);">AT.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2456[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2456&amp;m=10&amp;h=6e7dc21aeeef9a2c1124b27a093b64eafa08cbb8&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2439&amp;m=10&amp;h=9f1bbeaff49e9990df933177efc4ada1857d93e5&amp;i=1">2439</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2439[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2439&amp;m=10&amp;h=14b995da37b840942a184b7cf2e627c04563bbb5&amp;i=1','18USFL.3-2-BR1-12.20',null,null);">18USFL.3-2-BR1-12.20</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2439[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=387&amp;p2=US.EUROPCAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=830c2adcab13bbd738fb35fb68efcc071977a5e7&amp;i=1','US.EUROPCAR',null,null);">US.EUROPCAR</a></td>
+<td class="cell align_r nowrap">2018-12-20</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2439[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2439&amp;m=10&amp;h=07bf6ae3c3cd2c3edfb7d7adb83e16b8a744d70a&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2412&amp;m=10&amp;h=36f1aad0afd0b3349344697dff45b7b2755e3f91&amp;i=1">2412</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2412[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2412&amp;m=10&amp;h=89d3951a079888e0af3a45bc3d21773e5c555123&amp;i=1','18DE.6-9-BR2.08.20',null,null);">18DE.6-9-BR2.08.20</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2412[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=298&amp;p2=DE.AUTOSHAY3&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=8ae02d5efd457461d49b923c7df5a84d487c5b9a&amp;i=1','DE.AUTOSHAY3',null,null);">DE.AUTOSHAY3</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2412[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2412&amp;m=10&amp;h=d7880518c1f8a58f08a5ed9207646d045f1b2ed2&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2410&amp;m=10&amp;h=b9f88e46a84c189a60d32ca97e77849d0c683a59&amp;i=1">2410</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2410[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2410&amp;m=10&amp;h=37d9dfd1b96b6f41ca83dceb95586b70a9430be7&amp;i=1','18DE.6-3-BR1-08.20',null,null);">18DE.6-3-BR1-08.20</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2410[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=298&amp;p2=DE.AUTOSHAY3&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=8ae02d5efd457461d49b923c7df5a84d487c5b9a&amp;i=1','DE.AUTOSHAY3',null,null);">DE.AUTOSHAY3</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2410[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2410&amp;m=10&amp;h=a1d905eb46e914dd011ef278b7dfa0862e2a149c&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2363&amp;m=10&amp;h=63e3bc51c391db7c5061cd3d0305d1444aa12e4d&amp;i=1">2363</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2363[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2363&amp;m=10&amp;h=f6e95b936a7ebd1a3f7d7ce30dcd2a1cbb003e77&amp;i=1','18FR.2-1-BR1-12.14',null,null);">18FR.2-1-BR1-12.14</a></td>
+<td class="cell align_l">FRANCE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2363[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=272&amp;p2=FR.HERTZ&amp;p3=37&amp;p4=FRANCE&amp;m=10&amp;h=7cdd6f2b9e713f32eda9fdf30e1594e4cb345438&amp;i=1','FR.HERTZ',null,null);">FR.HERTZ</a></td>
+<td class="cell align_r nowrap">2018-12-14</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2363[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2363&amp;m=10&amp;h=b1e8956f6d0fa27042ec9bc21c86d2a2c982b5c3&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2340&amp;m=10&amp;h=d932302c552d35232a39976376f280ecc5a5734f&amp;i=1">2340</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2340[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2340&amp;m=10&amp;h=f38897a818911bd5cc512e8ce20832b114ff389f&amp;i=1','17DE.11-1-BR1-01.01',null,null);">17DE.11-1-BR1-01.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2340[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=391&amp;p2=DE.ALAMO&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=67581ac2d32ecc6702f061cf3a0b68a1cb2a2893&amp;i=1','DE.ALAMO',null,null);">DE.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2340[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2340&amp;m=10&amp;h=735c2dbdfc6863d5c076d931dc7872dce2568050&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2338&amp;m=10&amp;h=827135bdd91278bd56fbc6e94be628439d561762&amp;i=1">2338</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2338[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2338&amp;m=10&amp;h=518fa3b806d166f03f3832ccd533cc3d8a1fa1d2&amp;i=1','17USNY.1-9-BR1-12.19',null,null);">17USNY.1-9-BR1-12.19</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2338[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-12-19</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2338[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2338&amp;m=10&amp;h=f59c656df2387d0ac05e10da83892aa055425c42&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2330&amp;m=10&amp;h=04fcbd09433097feb9337d45192ab68ef7587c56&amp;i=1">2330</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2330[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2330&amp;m=10&amp;h=93f6e7ed0ba6f4b328205e44ad57f899cd83322f&amp;i=1','18HU.9-1-BR1-12.01',null,null);">18HU.9-1-BR1-12.01</a></td>
+<td class="cell align_l">HUNGARY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2330[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=385&amp;p2=HU.BUDGET&amp;p3=47&amp;p4=HUNGARY&amp;m=10&amp;h=aa723d404f19283dcdc82c5e65d900a6db186eb9&amp;i=1','HU.BUDGET',null,null);">HU.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-12-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2330[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2330&amp;m=10&amp;h=3d2f0b3c94b86518517cf74a41c422d10ff6c53f&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2313&amp;m=10&amp;h=7626784a7d3ea9ff47fe813778e1cee884228221&amp;i=1">2313</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2313[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2313&amp;m=10&amp;h=5bd27ba5c80cb649db7f2153ff69d383a7d4a07d&amp;i=1','18CA.1-1BR1-12.19',null,null);">18CA.1-1BR1-12.19</a></td>
+<td class="cell align_l">CANADA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2313[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=19&amp;p2=CA.THRIFTY&amp;p3=19&amp;p4=CANADA&amp;m=10&amp;h=60dea66802273e3acf56f931c8b1b6af7abc7712&amp;i=1','CA.THRIFTY',null,null);">CA.THRIFTY</a></td>
+<td class="cell align_r nowrap">2018-12-19</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">7.00</td>
+<td class="cell align_l">CAD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2313[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2313&amp;m=10&amp;h=7a7e9cd762da9cc65e1af259ac9706d137fbe7d5&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2128&amp;m=10&amp;h=31cd11dbe37dcb97c3c76d94a25a7631d1949509&amp;i=1">2128</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2128[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2128&amp;m=10&amp;h=dc82b821d8cd90ee6f8fa6811fac001ffe1c8b80&amp;i=1','18HR.4.1-BR1.11.01',null,null);">18HR.4.1-BR1.11.01</a></td>
+<td class="cell align_l">CROATIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2128[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=374&amp;p2=HR.ALAMO&amp;p3=46&amp;p4=CROATIA&amp;m=10&amp;h=61a302b2a60d75ce7eebabfbb0382d171dba4a46&amp;i=1','HR.ALAMO',null,null);">HR.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2128[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2128&amp;m=10&amp;h=277b325e988dda23935a4b331d1a4b97a1c4c328&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2077&amp;m=10&amp;h=3f0d44dbb475b9c3bb23c0a6a168effa000201ac&amp;i=1">2077</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2077[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2077&amp;m=10&amp;h=a237e42b5984b57c11a67960adfbf92200974508&amp;i=1','18IE.2-1-BR1-01.01',null,null);">18IE.2-1-BR1-01.01</a></td>
+<td class="cell align_l">IRELAND</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2077[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=370&amp;p2=IE.ALAMO&amp;p3=49&amp;p4=IRELAND&amp;m=10&amp;h=21c091f71e782ff4f1459440d0cdfa8737d83d68&amp;i=1','IE.ALAMO',null,null);">IE.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2077[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2077&amp;m=10&amp;h=68716e8cc527e83a82c0d2fdd9e46df64c54d9a2&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1857&amp;m=10&amp;h=0338c0a15399f5517d57232925effbbac5aff770&amp;i=1">1857</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1857[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1857&amp;m=10&amp;h=f4ca2074f8288f27b47e860a8ef5f53c870fb3f9&amp;i=1','18CH.6.1-BR1-01.01',null,null);">18CH.6.1-BR1-01.01</a></td>
+<td class="cell align_l">SWITZERLAND</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1857[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=350&amp;p2=CH.ALAMO&amp;p3=22&amp;p4=SWITZERLAND&amp;m=10&amp;h=67bfa589dcafa6423741fd511d555518b7033af3&amp;i=1','CH.ALAMO',null,null);">CH.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-12-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">CHF </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1857[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1857&amp;m=10&amp;h=5910ee6c18d8ab0f7146d779f8f56dab33d32596&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2454&amp;m=10&amp;h=56e5397293b1f64f5d4bc6a34a37ebf32e4fa322&amp;i=1">2454</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2454[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2454&amp;m=10&amp;h=ca1db67199bb3a344d690965da62b49649531ea9&amp;i=1','18USCA.3-9-BR1-08.21',null,null);">18USCA.3-9-BR1-08.21</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2454[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=387&amp;p2=US.EUROPCAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=830c2adcab13bbd738fb35fb68efcc071977a5e7&amp;i=1','US.EUROPCAR',null,null);">US.EUROPCAR</a></td>
+<td class="cell align_r nowrap">2018-08-21</td>
+<td class="cell align_r nowrap">2018-12-19</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2454[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2454&amp;m=10&amp;h=43037754717d4a808217e69dd61718eb964ff523&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2435&amp;m=10&amp;h=0a00b1c161cd94ce21a9f43e9d09d0607d1fa7c7&amp;i=1">2435</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2435[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2435&amp;m=10&amp;h=1ee5c4b891a428b02b3557577b74e75b8f6eb7cd&amp;i=1','18USFL.3-2-BR1-08.21',null,null);">18USFL.3-2-BR1-08.21</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2435[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=387&amp;p2=US.EUROPCAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=830c2adcab13bbd738fb35fb68efcc071977a5e7&amp;i=1','US.EUROPCAR',null,null);">US.EUROPCAR</a></td>
+<td class="cell align_r nowrap">2018-08-21</td>
+<td class="cell align_r nowrap">2018-12-19</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2435[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2435&amp;m=10&amp;h=a72556364c6415006ec2bcf9a831f4bf7efa0456&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2472&amp;m=10&amp;h=cfcbe532d6dadd68a26203f83f2ebefdf23f80fc&amp;i=1">2472</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2472[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2472&amp;m=10&amp;h=31078d344640dcc2ac649ebc676e82d9410e833a&amp;i=1','18USWE.1-1-BR1-08.16',null,null);">18USWE.1-1-BR1-08.16</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2472[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-24</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2472[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2472&amp;m=10&amp;h=7abf149272789a9fcc67927e81cdb27ee2ec3917&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2450&amp;m=10&amp;h=21ee338bc5b08c9d4557dfee235dc300c7b46220&amp;i=1">2450</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2450[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2450&amp;m=10&amp;h=66adcab7933af0e313bbaac1ce60f00d8be9ec1d&amp;i=1','18USCA.1-9-BR1-08.24',null,null);">18USCA.1-9-BR1-08.24</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2450[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-24</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2450[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2450&amp;m=10&amp;h=ec1f25ddc0a309528038b7ea5e7a69dbaf73773f&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2441&amp;m=10&amp;h=7a51ce04d298f879dbb2ceb0e52358a201293c85&amp;i=1">2441</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2441[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2441&amp;m=10&amp;h=c9b2489ff1eb1154b2eaf97fb4c05fb8e433bfc2&amp;i=1','18USFO.1-9-BR1-08.20',null,null);">18USFO.1-9-BR1-08.20</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2441[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-09</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2441[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2441&amp;m=10&amp;h=958aed075a39ce26290011fd78c7cce10c7da103&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2432&amp;m=10&amp;h=b4adbc1b8e5cfaee343203176b11a93104bbc47d&amp;i=1">2432</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2432[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2432&amp;m=10&amp;h=4b3b9a73062e2157a124db69c7003f5163aeffa9&amp;i=1','18USFL.1-9-BR1-08.20',null,null);">18USFL.1-9-BR1-08.20</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2432[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-24</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2432[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2432&amp;m=10&amp;h=de431996b971f00672af935a12a74a7486582987&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2311&amp;m=10&amp;h=c33fad8d3a6847d5ab2dd6bdcbde4a5d851dba06&amp;i=1">2311</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2311[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2311&amp;m=10&amp;h=0d0620258a00617d3b0b40e4ec384ebda5bfd5e2&amp;i=1','18USCA.1-1-BR1-08.16',null,null);">18USCA.1-1-BR1-08.16</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2311[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2311[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2311&amp;m=10&amp;h=0d5f0647a209f88882993252216456912c8ef371&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2309&amp;m=10&amp;h=2151586495159aec646439888c31c0b6051e3e62&amp;i=1">2309</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2309[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2309&amp;m=10&amp;h=8bb726d79eea66240f8a94624c4f65cb30d9fbce&amp;i=1','18CA.1-1-BR1-08.16',null,null);">18CA.1-1-BR1-08.16</a></td>
+<td class="cell align_l">CANADA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2309[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=19&amp;p2=CA.THRIFTY&amp;p3=19&amp;p4=CANADA&amp;m=10&amp;h=60dea66802273e3acf56f931c8b1b6af7abc7712&amp;i=1','CA.THRIFTY',null,null);">CA.THRIFTY</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">7.00</td>
+<td class="cell align_l">CAD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2309[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2309&amp;m=10&amp;h=e8765a1b3892b3cb0c95ea0bbffd56a2909181be&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2248&amp;m=10&amp;h=0c756bfa06e263aba4402422516dfcd1ecccb11d&amp;i=1">2248</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2248[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2248&amp;m=10&amp;h=19d92699dbbc5244a5ac2bca9814fa91b1e435b7&amp;i=1','17USEW.1-1-BR1-08.16',null,null);">17USEW.1-1-BR1-08.16</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2248[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2248[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2248&amp;m=10&amp;h=52079caa7bc1c30032234040eec487dcbc2b7574&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2193&amp;m=10&amp;h=fec131b638b789f7b0691dcb693ba2a9d409e1b1&amp;i=1">2193</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2193[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2193&amp;m=10&amp;h=47e36e1c80015a80b6b4f1eb6e34373399c56ca7&amp;i=1','18USRE.1-9-BR1-08.16',null,null);">18USRE.1-9-BR1-08.16</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2193[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2193[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2193&amp;m=10&amp;h=6d7775e5eefc7f162525317c9b8d8f9bc15ebbc3&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2178&amp;m=10&amp;h=72b2bbdec4775f68e55215f30cb0cc57bf76bff9&amp;i=1">2178</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2178[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2178&amp;m=10&amp;h=4d59c30f0c827dec8c174cd07fa33a07b9af16ae&amp;i=1','18USBO.1-9-BR1-08.16',null,null);">18USBO.1-9-BR1-08.16</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2178[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2178[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2178&amp;m=10&amp;h=5c65542047eefe4314367ce296e37a0d71ac27a3&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2172&amp;m=10&amp;h=e33da74d845026ae5bacf52c5b025e46c2dc934b&amp;i=1">2172</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2172[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2172&amp;m=10&amp;h=33cf916f509b8093f5cf69fb259bc0b6f40f0c7f&amp;i=1','18USNY.1-9-BR1-08.28',null,null);">18USNY.1-9-BR1-08.28</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2172[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-08-16</td>
+<td class="cell align_r nowrap">2018-12-18</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2172[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2172&amp;m=10&amp;h=cc0b6d632296b30eb415af338e2309a99415d95e&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2409&amp;m=10&amp;h=904b9f63eca61df61ff129db25ab1f2e83b0c50b&amp;i=1">2409</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2409[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2409&amp;m=10&amp;h=9a880adc54ebfde0bf1af0556adbed1197cc9fbb&amp;i=1','18CZ.1-3-BR1-08.21',null,null);">18CZ.1-3-BR1-08.21</a></td>
+<td class="cell align_l">CZECH REPUBLIC</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2409[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=27&amp;p2=CZ.BUDGET&amp;p3=27&amp;p4=CZECH%20REPUBLIC&amp;m=10&amp;h=dab62f08096e74e3cd366e7024fefa84f7ed45da&amp;i=1','CZ.BUDGET',null,null);">CZ.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-08-21</td>
+<td class="cell align_r nowrap">2018-12-13</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2409[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2409&amp;m=10&amp;h=3d4cd72d0a4be24fbc94a8a539b87fec26fd541d&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2360&amp;m=10&amp;h=b6c17d2bdc631251bfc6ee3c68960eb1172107d4&amp;i=1">2360</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2360[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2360&amp;m=10&amp;h=e2058dfa9db82c9f4000eee43c82211b9f83930d&amp;i=1','18FR.2-1-BR1-08.20',null,null);">18FR.2-1-BR1-08.20</a></td>
+<td class="cell align_l">FRANCE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2360[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=272&amp;p2=FR.HERTZ&amp;p3=37&amp;p4=FRANCE&amp;m=10&amp;h=7cdd6f2b9e713f32eda9fdf30e1594e4cb345438&amp;i=1','FR.HERTZ',null,null);">FR.HERTZ</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2018-12-13</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2360[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2360&amp;m=10&amp;h=d7a81188580553b3a299f8c1dc5a6aaac569cc93&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2429&amp;m=10&amp;h=6a109063800538bedd24b1c5d63310b31d4f311c&amp;i=1">2429</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2429[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2429&amp;m=10&amp;h=eb5e6ed767b723aec4115f68a4b9190280449e1f&amp;i=1','18USNY.1-9-BR1-09.01',null,null);">18USNY.1-9-BR1-09.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2429[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-11-30</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2429[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2429&amp;m=10&amp;h=9998e57bff54a2f02f0e896c9f188d9e93384b67&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2328&amp;m=10&amp;h=9b32f5289ff6580368c4c7ab3a7a19dd4bbae1af&amp;i=1">2328</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2328[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2328&amp;m=10&amp;h=7d4a23b7ffeef55827f08a0b667b0af0fc14d117&amp;i=1','18HU.9-1-BR1-10.01',null,null);">18HU.9-1-BR1-10.01</a></td>
+<td class="cell align_l">HUNGARY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2328[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=385&amp;p2=HU.BUDGET&amp;p3=47&amp;p4=HUNGARY&amp;m=10&amp;h=aa723d404f19283dcdc82c5e65d900a6db186eb9&amp;i=1','HU.BUDGET',null,null);">HU.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-10-01</td>
+<td class="cell align_r nowrap">2018-11-30</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2328[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2328&amp;m=10&amp;h=40741f7bc1224748ac7e67e56d76416cdaa76631&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1847&amp;m=10&amp;h=60be91edbbd2a10fd78b5629b8cdef8e9a55031a&amp;i=1">1847</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1847[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1847&amp;m=10&amp;h=dd139189cb68398b7a1b8f3843d723259ed0203d&amp;i=1','18BG.2.3-BR0-01',null,null);">18BG.2.3-BR0-01</a></td>
+<td class="cell align_l">BULGARIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1847[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=283&amp;p2=BG.TOPRENTACAR&amp;p3=12&amp;p4=BULGARIA&amp;m=10&amp;h=1e88fc80b94ae03066b930e0f7e16335291d6fca&amp;i=1','BG.TOPRENTACAR',null,null);">BG.TOPRENTACAR</a></td>
+<td class="cell align_r nowrap">2018-11-07</td>
+<td class="cell align_r nowrap">2018-11-07</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1847[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1847&amp;m=10&amp;h=e66aa3345201590f7a88cc7529ca405c43457188&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1906&amp;m=10&amp;h=ef1d61195c7400a1a102c228707038614474a1f9&amp;i=1">1906</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1906[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1906&amp;m=10&amp;h=a3bcc23180b56a2c18b98b762c30b11e00a24fc1&amp;i=1','18CY.2-1-BR1-04-01',null,null);">18CY.2-1-BR1-04-01</a></td>
+<td class="cell align_l">CYPRUS</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1906[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=356&amp;p2=CY.ALAMO&amp;p3=26&amp;p4=CYPRUS&amp;m=10&amp;h=e0917794b2c86d44288992be811ef19a7bef4fef&amp;i=1','CY.ALAMO',null,null);">CY.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-11-04</td>
+<td class="cell align_r nowrap">2018-11-04</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1906[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1906&amp;m=10&amp;h=1c113e165480cc76611b190d2d09dcdd5a519a2b&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2443&amp;m=10&amp;h=e1964f3651127adcaf169c174bf1be3f7bf875ad&amp;i=1">2443</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2443[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2443&amp;m=10&amp;h=b51eb297c6650d46cab72625cb562d46dceda209&amp;i=1','18BE.4-2-BR1.01.01',null,null);">18BE.4-2-BR1.01.01</a></td>
+<td class="cell align_l">BELGIUM</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2443[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=312&amp;p2=BE.AVIS&amp;p3=11&amp;p4=BELGIUM&amp;m=10&amp;h=1a8e900a9d6f8e8e1a59452a63a27ae249776d10&amp;i=1','BE.AVIS',null,null);">BE.AVIS</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2443[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2443&amp;m=10&amp;h=93725fb7f9a39253a5c92fbf0c5baa46869e532d&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2436&amp;m=10&amp;h=cc62e01495f99a3ff493c61d56d3d737d8e37bef&amp;i=1">2436</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2436[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2436&amp;m=10&amp;h=27eed87976b6641848351e8640f3e4d98f036e03&amp;i=1','18UK.1-1-BR1-09.01',null,null);">18UK.1-1-BR1-09.01</a></td>
+<td class="cell align_l">UNITED KINGDOM</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2436[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=332&amp;p2=UK.EUROPCAR&amp;p3=39&amp;p4=UNITED%20KINGDOM&amp;m=10&amp;h=315cf016c872d62762ef1bde4ce03fffcbd06cd5&amp;i=1','UK.EUROPCAR',null,null);">UK.EUROPCAR</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">4.00</td>
+<td class="cell align_l">GBP </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2436[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2436&amp;m=10&amp;h=42248889944e86b9c0bb753fa49b07f99a1fa019&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2419&amp;m=10&amp;h=04651bdc0195cde227182fd9953bf7e309e77dd2&amp;i=1">2419</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2419[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2419&amp;m=10&amp;h=9a0839325b0d4b8ba183aa1d70870c9d0476df09&amp;i=1','18AT.6-9-BR1-09.01',null,null);">18AT.6-9-BR1-09.01</a></td>
+<td class="cell align_l">AUSTRIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2419[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=302&amp;p2=AT.AVIS&amp;p3=8&amp;p4=AUSTRIA&amp;m=10&amp;h=1bb6d8f717f81f30a4ef4b0b04da1dc4c95be5c6&amp;i=1','AT.AVIS',null,null);">AT.AVIS</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit">rrr</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2419[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2419&amp;m=10&amp;h=2feb0f214a6e0e82ee8c07c448e4371293f6c910&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2417&amp;m=10&amp;h=55e3281b882d048d92c8f6ff3531a33c7c1c1fc0&amp;i=1">2417</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2417[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2417&amp;m=10&amp;h=7446fec0dbdc8e5642831ceef86c613db5fd22e9&amp;i=1','18AT.6-3-BR1-08.01',null,null);">18AT.6-3-BR1-08.01</a></td>
+<td class="cell align_l">AUSTRIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2417[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=302&amp;p2=AT.AVIS&amp;p3=8&amp;p4=AUSTRIA&amp;m=10&amp;h=1bb6d8f717f81f30a4ef4b0b04da1dc4c95be5c6&amp;i=1','AT.AVIS',null,null);">AT.AVIS</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2417[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2417&amp;m=10&amp;h=d6c0fc97e42bc4980d59da50d84b32397ec9df19&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2414&amp;m=10&amp;h=4323953a4c0fcff410b6f25730c77b165b87b9de&amp;i=1">2414</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2414[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2414&amp;m=10&amp;h=d8f15842902d1d453da9c93df74b8a669a8138ec&amp;i=1','18DE.6-9-BR1-09.01',null,null);">18DE.6-9-BR1-09.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2414[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=298&amp;p2=DE.AUTOSHAY3&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=8ae02d5efd457461d49b923c7df5a84d487c5b9a&amp;i=1','DE.AUTOSHAY3',null,null);">DE.AUTOSHAY3</a></td>
+<td class="cell align_r nowrap">2018-08-20</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2414[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2414&amp;m=10&amp;h=4e2ade0eb6d87de5aede6a71b59a3ed163b6ebca&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2400&amp;m=10&amp;h=4fdbb7d53017834ba5d01efabf1b0340aa930d5b&amp;i=1">2400</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2400[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2400&amp;m=10&amp;h=d1ddf53b52f4841645c1ccb500f9a91fa0937a7e&amp;i=1','18CH.2-9-BR1-09.01',null,null);">18CH.2-9-BR1-09.01</a></td>
+<td class="cell align_l">SWITZERLAND</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2400[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=305&amp;p2=CH.AVIS&amp;p3=22&amp;p4=SWITZERLAND&amp;m=10&amp;h=0319b546413374bdaf9424050cd9bc982b60ba37&amp;i=1','CH.AVIS',null,null);">CH.AVIS</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">CHF </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2400[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2400&amp;m=10&amp;h=f719933815f9fa5c640371d6564b31cc3dbf243f&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2397&amp;m=10&amp;h=ccefa02a7ce93a3bc87aa7b9656cafa61c094521&amp;i=1">2397</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2397[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2397&amp;m=10&amp;h=2702af587b2c4c0f49d3edcd9760032031d7cd11&amp;i=1','18CH.2-3-BR1-09.01',null,null);">18CH.2-3-BR1-09.01</a></td>
+<td class="cell align_l">SWITZERLAND</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2397[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=305&amp;p2=CH.AVIS&amp;p3=22&amp;p4=SWITZERLAND&amp;m=10&amp;h=0319b546413374bdaf9424050cd9bc982b60ba37&amp;i=1','CH.AVIS',null,null);">CH.AVIS</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">CHF </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2397[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2397&amp;m=10&amp;h=42369ea98a4535f9f54c887c50b8ca67c9c169a9&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2394&amp;m=10&amp;h=ca1cf3a754a8b2345815917b8ea3612437371c8e&amp;i=1">2394</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2394[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2394&amp;m=10&amp;h=6f19015368e626bd6f4c6bac450d8880ee383855&amp;i=1','18CH.5-3-BR1-09.01',null,null);">18CH.5-3-BR1-09.01</a></td>
+<td class="cell align_l">SWITZERLAND</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2394[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=309&amp;p2=CH.BUDGET&amp;p3=22&amp;p4=SWITZERLAND&amp;m=10&amp;h=bbb3426c47f465c1118671585a37b28a880947c6&amp;i=1','CH.BUDGET',null,null);">CH.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-09-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">CHF </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2394[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2394&amp;m=10&amp;h=73e4bd80a37b9fac5e38fbf86939f276db71528c&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2364&amp;m=10&amp;h=cadfc004826c6d9c1e960d4d8e73245294adbba3&amp;i=1">2364</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2364[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2364&amp;m=10&amp;h=ec39248f001b0b0747f7632390feac728809b0b6&amp;i=1','18NL.3-9-BR1-08.15',null,null);">18NL.3-9-BR1-08.15</a></td>
+<td class="cell align_l">NETHERLANDS</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2364[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=308&amp;p2=NL.SIXT&amp;p3=78&amp;p4=NETHERLANDS&amp;m=10&amp;h=526d8d524f84e6ee0c54886a87e3bb6cef0d7ede&amp;i=1','NL.SIXT',null,null);">NL.SIXT</a></td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2364[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2364&amp;m=10&amp;h=190fbe91aeaf102e202c058976b394d49222c552&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2358&amp;m=10&amp;h=12bc9f142ea99be4732f49a357929e49399cb7f1&amp;i=1">2358</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2358[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2358&amp;m=10&amp;h=43e4e494cff14cb510bf559986c4f2c38e3111c5&amp;i=1','18DE.7-9-BR1-04.01',null,null);">18DE.7-9-BR1-04.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2358[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=299&amp;p2=DE.AUTOSHAY7&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=9d6864ae3502f05002bda8379bcf666374a0b0bf&amp;i=1','DE.AUTOSHAY7',null,null);">DE.AUTOSHAY7</a></td>
+<td class="cell align_r nowrap">2018-04-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2358[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2358&amp;m=10&amp;h=f4ceb905a53cee59849001e0eb4a8af68b0ec519&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2357&amp;m=10&amp;h=f8be838aeaa50e1dd07f177da191d4558e3d189f&amp;i=1">2357</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2357[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2357&amp;m=10&amp;h=094cc1504162ebbe4df4aa07996f06c19c9c216f&amp;i=1','18DE.7-3-BR1-04.01',null,null);">18DE.7-3-BR1-04.01</a></td>
+<td class="cell align_l">GERMANY</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2357[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=299&amp;p2=DE.AUTOSHAY7&amp;p3=29&amp;p4=GERMANY&amp;m=10&amp;h=9d6864ae3502f05002bda8379bcf666374a0b0bf&amp;i=1','DE.AUTOSHAY7',null,null);">DE.AUTOSHAY7</a></td>
+<td class="cell align_r nowrap">2018-04-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2357[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2357&amp;m=10&amp;h=d6d64a2097b4f6485149e9e1ec9fc569564db1d3&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2322&amp;m=10&amp;h=d6d244867a09495776c985e5bcabfd25bf054d38&amp;i=1">2322</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2322[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2322&amp;m=10&amp;h=5abfaa612926d915880c99f85023e8c39463dc4e&amp;i=1','18FR.4.2-BR2-08.21',null,null);">18FR.4.2-BR2-08.21</a></td>
+<td class="cell align_l">FRANCE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2322[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=297&amp;p2=FR.EUROPCAR&amp;p3=37&amp;p4=FRANCE&amp;m=10&amp;h=0dc2a027300f1181fa6708d663f2c9473db5c137&amp;i=1','FR.EUROPCAR',null,null);">FR.EUROPCAR</a></td>
+<td class="cell align_r nowrap">2018-08-21</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2322[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2322&amp;m=10&amp;h=1572e8ba5769e3e65c03c58e86ea178d85d5dfd7&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2307&amp;m=10&amp;h=77815171c04a7d119f974099fdca4a313943ca6f&amp;i=1">2307</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2307[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2307&amp;m=10&amp;h=772204c68dc1d55da8e1a4ae37ff3b8ac80fd537&amp;i=1','18AT.9-9-BR1-04.16',null,null);">18AT.9-9-BR1-04.16</a></td>
+<td class="cell align_l">AUSTRIA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2307[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=381&amp;p2=AT.BUDGET&amp;p3=8&amp;p4=AUSTRIA&amp;m=10&amp;h=5000825e8bc31390f8379ed3e736980614c8f0ce&amp;i=1','AT.BUDGET',null,null);">AT.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2307[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2307&amp;m=10&amp;h=fca174c21d00cc1ac26e819b6e8e86f889bcb50c&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2302&amp;m=10&amp;h=70cb7ebe92545cbd4137a017a873508cbd6d56c4&amp;i=1">2302</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2302[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2302&amp;m=10&amp;h=4b691ef1b27897990f023a4aedffa8304715afdf&amp;i=1','18NL.5-3-BR1-04.01',null,null);">18NL.5-3-BR1-04.01</a></td>
+<td class="cell align_l">NETHERLANDS</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2302[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=333&amp;p2=NL.BUDGET&amp;p3=78&amp;p4=NETHERLANDS&amp;m=10&amp;h=05622779bc737da48126776bb69835e51afa87a6&amp;i=1','NL.BUDGET',null,null);">NL.BUDGET</a></td>
+<td class="cell align_r nowrap">2018-04-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2302[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2302&amp;m=10&amp;h=136020934292dd2f69b98b726d2f4cc6471748da&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="odd row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2294&amp;m=10&amp;h=1fc3eb2de69f72b13f3d7a74a9ae2d3e03a76dbc&amp;i=1">2294</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2294[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2294&amp;m=10&amp;h=30235cd5d8442ef10e18d0f2918a2fe717afa815&amp;i=1','18UK.4-2-BR1-01.01',null,null);">18UK.4-2-BR1-01.01</a></td>
+<td class="cell align_l">UNITED KINGDOM</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2294[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=354&amp;p2=UK.AVIS&amp;p3=39&amp;p4=UNITED%20KINGDOM&amp;m=10&amp;h=9f272c5875f3dea475eb65d0a43760f4b6e0760e&amp;i=1','UK.AVIS',null,null);">UK.AVIS</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">GBP </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2294[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2294&amp;m=10&amp;h=b6439252654e403b4143e9171860afd14348e6eb&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="even row" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2293&amp;m=10&amp;h=7f7578711ff993066182a48d0de3a28c93c8a2bc&amp;i=1">2293</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2293[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2293&amp;m=10&amp;h=eefdb4d645b92bd9ea13923892f798c4951f6de2&amp;i=1','18UK.4-1-BR1-01.01',null,null);">18UK.4-1-BR1-01.01</a></td>
+<td class="cell align_l">UNITED KINGDOM</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2293[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=354&amp;p2=UK.AVIS&amp;p3=39&amp;p4=UNITED%20KINGDOM&amp;m=10&amp;h=9f272c5875f3dea475eb65d0a43760f4b6e0760e&amp;i=1','UK.AVIS',null,null);">UK.AVIS</a></td>
+<td class="cell align_r nowrap">2018-01-01</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">4.00</td>
+<td class="cell align_l">GBP </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2293[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2293&amp;m=10&amp;h=d83ca60c9d323ed053d235a25602f4af2c68d533&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1223&amp;m=10&amp;h=4823fc0f35642017e28ff0f9ab1499385bf247c4&amp;i=1">1223</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1223[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1223&amp;m=10&amp;h=e11a05e4455f55af3ac2442b5246131ec07261b1&amp;i=1','18BE.4-1-BR1.01.10',null,null);">18BE.4-1-BR1.01.10</a></td>
+<td class="cell align_l">BELGIUM</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1223[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=312&amp;p2=BE.AVIS&amp;p3=11&amp;p4=BELGIUM&amp;m=10&amp;h=1a8e900a9d6f8e8e1a59452a63a27ae249776d10&amp;i=1','BE.AVIS',null,null);">BE.AVIS</a></td>
+<td class="cell align_r nowrap">2018-01-10</td>
+<td class="cell align_r nowrap">2018-10-31</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit">rrr</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1223[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1223&amp;m=10&amp;h=5bb17beb4b4e813b624474b155560e2b303523d7&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1824&amp;m=10&amp;h=a6e64d234e8fb67e649d528ee5439fd78a5a0ba3&amp;i=1">1824</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1824[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1824&amp;m=10&amp;h=1d2c4609e3e575d0c3729d1e28cdb6b7c90af307&amp;i=1','18GR.8.1-BR1-01.01',null,null);">18GR.8.1-BR1-01.01</a></td>
+<td class="cell align_l">GREECE</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1824[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=342&amp;p2=GR.ALAMO&amp;p3=45&amp;p4=GREECE&amp;m=10&amp;h=81a475a2d6d54650c2ab00439226598e88943644&amp;i=1','GR.ALAMO',null,null);">GR.ALAMO</a></td>
+<td class="cell align_r nowrap">2018-10-25</td>
+<td class="cell align_r nowrap">2018-10-25</td>
+<td class="cell align_r nowrap">5.00</td>
+<td class="cell align_l">EUR </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1824[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1824&amp;m=10&amp;h=5a07d1fab9253337fcdc4ad014a9d90c1f253d80&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2312&amp;m=10&amp;h=c35ab80d28a83b8adfaf5a0019ccb862460f42a4&amp;i=1">2312</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2312[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2312&amp;m=10&amp;h=9952fbc28764b9355940675a6a0c697250962d52&amp;i=1','18CA.1-1BR1-07.01',null,null);">18CA.1-1BR1-07.01</a></td>
+<td class="cell align_l">CANADA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2312[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=19&amp;p2=CA.THRIFTY&amp;p3=19&amp;p4=CANADA&amp;m=10&amp;h=60dea66802273e3acf56f931c8b1b6af7abc7712&amp;i=1','CA.THRIFTY',null,null);">CA.THRIFTY</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">7.00</td>
+<td class="cell align_l">CAD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2312[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2312&amp;m=10&amp;h=3013f26d4eccec9165173d59cc4074a06798648b&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2201&amp;m=10&amp;h=a8fdc58898eeb8e69b4ef1327c02337cb7bbdb48&amp;i=1">2201</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2201[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2201&amp;m=10&amp;h=287cbb0ff324889f441565f794a67f6e6dd36821&amp;i=1','17USRE.1-9-BR1-07.01',null,null);">17USRE.1-9-BR1-07.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2201[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-06-28</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2201[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2201&amp;m=10&amp;h=c4feb28bf5f41c019134e6e6200be47eeaac18a1&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2188&amp;m=10&amp;h=f335ad801f16aa06e5c32260ed472381f3cacf23&amp;i=1">2188</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2188[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2188&amp;m=10&amp;h=2ff4c5b2923e3ad98c8cf1c537db07e07f9a148b&amp;i=1','17USFO.1-9-BR1-07.01',null,null);">17USFO.1-9-BR1-07.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2188[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2188[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2188&amp;m=10&amp;h=a3c2a6638b9364d7c1c49fd0e6bd63ca9ca47867&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2185&amp;m=10&amp;h=463903a6ca87cc1291950d091d72e2cda5fa2663&amp;i=1">2185</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2185[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2185&amp;m=10&amp;h=ce2f3fdc103af33a3dad8bc028e7d6e6ffb282e1&amp;i=1','17USEW.1-9-PR1-07.01',null,null);">17USEW.1-9-PR1-07.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2185[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2185[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2185&amp;m=10&amp;h=3f8b1bb47f92c30e60a9278ea13f02522c0c2fe4&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row odd" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=2174&amp;m=10&amp;h=6daa7ca6f292dacd45c0aeb7127fca6547c42c27&amp;i=1">2174</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2174[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=2174&amp;m=10&amp;h=d87bcb3af814b8793ea3f33ca554d87671943826&amp;i=1','17USNY.1-9-BR1-07.01',null,null);">17USNY.1-9-BR1-07.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2174[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup2174[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=2174&amp;m=10&amp;h=94ba0764ca0acbb802ac8024a6036503fd275944&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row even" data-set="0">
+<td class="cell align_r nowrap"><a href="http://34.197.159.58/mydbr/report.php?r=65&amp;p1=1821&amp;m=10&amp;h=519c6785fb34615bb8d0c83f299143bd70bad17d&amp;i=1">1821</a></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1821[]','http://34.197.159.58/mydbr/report.php?r=68&amp;p1=1821&amp;m=10&amp;h=f32885a538d15c0829f45626437279278e96282f&amp;i=1','17USBO.1-9-BR1-07.01',null,null);">17USBO.1-9-BR1-07.01</a></td>
+<td class="cell align_l">USA</td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1821[]','http://34.197.159.58/mydbr/report.php?r=78&amp;p1=265&amp;p2=US.DOLLAR&amp;p3=177&amp;p4=USA&amp;m=10&amp;h=433732832c53355fadc046b72f77c105e85d8e9f&amp;i=1','US.DOLLAR',null,null);">US.DOLLAR</a></td>
+<td class="cell align_r nowrap">2018-07-01</td>
+<td class="cell align_r nowrap">2018-08-15</td>
+<td class="cell align_r nowrap">0.00</td>
+<td class="cell align_l">USD </td>
+<td class="cell align_l editable autosubmit"></td>
+<td class="cell align_l"><a href="javascript:void(0)" style="color:inherit;" onclick="embed_element('popup1821[]','http://34.197.159.58/mydbr/report.php?r=79&amp;p1=1821&amp;m=10&amp;h=b1b52209a8246ead1b5c92c05bd9e36d522a00fb&amp;i=1','Areas',null,null);">Areas</a></td>
+</tr><tr class="row summary_row sortbottom last_row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+<div id="hiddendiv"></div></div>
+<script>if (typeof(mydbr_loc) == "undefined") { mydbr_loc = new Array(); } mydbr_loc["MYDBR_AA_OK"] = 'OK';mydbr_loc["MYDBR_AA_CANCEL"] = 'Cancel';mydbr_loc["MYDBR_AA_COPY_TO_CLIPBOARD_OK"] = 'The data has been copied to your clipboard.';mydbr_loc["MYDBR_IMPORT_FILE"] = 'File';mydbr_loc["MYDBR_IMPORT_IMPORT"] = 'Import';mydbr_loc["MYDBR_IMPORT_SELECT"] = 'Please select the file to be imported';mydbr_loc["MYDBR_AA_MULTILEVEL_SORT"] = 'Click here to sort.\nPress shift for a multilevel sort.';mydbr_loc["MYDBR_AA_ALL"] = 'All';mydbr_loc["MYDBR_AA_NO_ROWS_SELECTED"] = 'Please select the rows';mydbr_loc["MYDBR_EXT_INCLUDE"] = '%s-extension should be marked to be used in the report. You can do this from report parameters.';mydbr_loc["MYDBR_EXT_LIKE_RICHTEXT"] = 'Rich text';mydbr_loc["MYDBR_EXT_LIKE_CODE_EDITING"] = 'Code editing';mydbr_loc["MYDBR_EXT_SAVE_AND_CLOSE"] = 'Save and close';mydbr_loc["MYDBR_EXT_CLOSE_NO_SAVE"] = 'Close without saving';mydbr_loc["MYDBR_UPLOAD_FILE_TOO_BIG"] = 'Filesize limit exceeded.';</script><script>jquery_date = 'yy-mm-dd'</script><div id="tiptip_holder" style="max-width:auto;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div><div id="ajaxBusy"><div class="ajaxspin"></div></div></body><style type="text/css"></style></html>
