@@ -467,6 +467,7 @@
         overviewPosition = this.positionOrMax(overviewPosition, this.maxOverviewPosition);
         var oldScrollPercent = this.scrollPercent;
         this.scrollPercent = overviewPosition / this.maxOverviewPosition;
+        //console.log([overviewPosition, oldScrollPercent, this.scrollPercent]);
         if (oldScrollPercent != this.scrollPercent) {
           var thumbPosition = this.scrollPercent * this.maxThumbPosition;
           if (animate)
@@ -481,12 +482,17 @@
       },
 
       positionOrMax: function (p, max) {
-        if (p < 0)
+        if(this.sizing.offsetComponent() == 'top' && $(".content").height() > max) {
           return 0;
-        else if (p > max)
+        } else if (p < 0) {
+          return 0;
+        } else if (this.sizing.offsetComponent() == 'top' && (p+$(".content").height() > max)) {
+          return max-$(window).height()+50;
+        } else if(p > max) {
           return max;
-        else
+        }else {
           return p;
+        }
       },
 
       triggerCustomScroll: function (oldScrollPercent) {
